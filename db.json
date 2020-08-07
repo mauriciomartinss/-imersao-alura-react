@@ -1,0 +1,46 @@
+{
+    "categorias": [
+        {
+            "id": 1,
+            "nome": "Front End",
+            "descricao": "uma categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        },
+        {
+            "id": 2,
+            "nome": "Back End",
+            "descricao": "uma outra categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        },
+        {
+            "id": 3,
+            "nome": "Front End",
+            "descricao": "uma categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        },
+        {
+            "id": 4,
+            "nome": "Front End",
+            "descricao": "uma categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        },
+        {
+            "id": 5,
+            "nome": "Front End",
+            "descricao": "uma categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        },
+        {
+            "id": 6,
+            "nome": "Front End",
+            "descricao": "uma categoria bacanudassa",
+            "cor": "#cbd1ff"
+        
+        }
+    ]
+}
