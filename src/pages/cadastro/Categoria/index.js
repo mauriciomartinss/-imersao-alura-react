@@ -36,21 +36,18 @@ function CadastroCategoria() {
     );
   }
 
-
   useEffect(() => {
-    console.log('alow')
-    const URL  = 'http://localhost:8080/categorias'
-    
+    console.log('alow');
+    const URL = 'http://localhost:8080/categorias';
+
     fetch(URL)
-    .then(async (respostaDoServidor) => {
-      const resposta = await respostaDoServidor.json()
-      setCategorias([
-        ...resposta,
-      ])
-    })  
-  }, [])
-
-
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      });
+  }, []);
 
   return (
     <PageDefault>
@@ -102,8 +99,7 @@ function CadastroCategoria() {
         <div>
           Loading...
         </div>
-        )
-      }
+      )}
 
       <ul>
         {categorias.map((categoria) => (
