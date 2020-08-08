@@ -38,7 +38,7 @@ function CadastroCategoria() {
 
   useEffect(() => {
     console.log('alow');
-    const URL = 'http://localhost:8080/categorias';
+    const URL = 'https://aluraflixmauriciomartins.herokuapp.com/categorias';
 
     fetch(URL)
       .then(async (respostaDoServidor) => {
