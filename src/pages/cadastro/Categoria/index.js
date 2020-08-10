@@ -3,41 +3,25 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForm';
 
 function CadastroCategoria() {
   const valoresIniciais = {
     nome: '',
     descricao: '',
     cor: '',
-
+    
   };
 
-  const [values, setValues] = useState(valoresIniciais);
+  const {handleChange, values, clearForm} = useForm(valoresIniciais)
+  
   const [categorias, setCategorias] = useState([]);
 
   // sem a desestruturação seria:
   // const values = useState(valoresIniciais)
   // const setValues = useState(valoresIniciais)
 
-  function setValue(chave, valor) {
-    // chave: nome, descricao, qualquer coisa.
-
-    setValues({
-      ...values,
-      [chave]: valor,
-
-    });
-  }
-
-  function handleChange(infosDoEvento) {
-    setValue(
-      infosDoEvento.target.getAttribute('name'),
-      infosDoEvento.target.value,
-    );
-  }
-
   useEffect(() => {
-    console.log('alow');
     const URL = 'https://aluraflixmauriciomartins.herokuapp.com/categorias';
 
     fetch(URL)
@@ -62,7 +46,7 @@ function CadastroCategoria() {
           ...categorias,
           values,
         ]);
-        setValues(valoresIniciais);
+        clearForm();
       }}
       >
 
@@ -103,8 +87,8 @@ function CadastroCategoria() {
 
       <ul>
         {categorias.map((categoria) => (
-          <li key={`${categoria.nome}`}>
-            {categoria.nome}
+          <li key={`${categoria.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
@@ -114,6 +98,7 @@ function CadastroCategoria() {
       </Link>
     </PageDefault>
   );
+
 }
 
 export default CadastroCategoria;

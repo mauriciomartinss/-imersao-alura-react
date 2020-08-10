@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components'
+import styled, { css } from 'styled-components';
 
 const FormFieldWrapper = styled.div`
   position: relative;
@@ -10,9 +10,9 @@ const FormFieldWrapper = styled.div`
   input[type="color"] {
     padding-left: 56px;
   }
-`
+`;
 
-const Label = styled.label``
+const Label = styled.label``;
 
 Label.Text = styled.span`
   color: #E5E5E5;
@@ -32,7 +32,7 @@ Label.Text = styled.span`
   transition: .1s ease-in-out;
 `;
 
-const Input = styled.input `
+const Input = styled.input`
   background: #53585D;
   color: #F5F5F5;
   display: block;
@@ -68,25 +68,21 @@ const Input = styled.input `
       `;
   }
 }
-`
-
+`;
 
 function FormField({
   label, type, name, value, onChange,
 }) {
-  const fieldId = `id_${name}`; 
+  const fieldId = `id_${name}`;
   const isTextarea = type === 'textarea';
-  const tag = isTextarea ? 'textarea' : 'input'
-  const hasValue = Boolean(value.length)
-
-
-
+  const tag = isTextarea ? 'textarea' : 'input';
+  const hasValue = Boolean(value.length);
 
   return (
     <FormFieldWrapper>
       <Label
         htmlFor={fieldId}
-      >  
+      >
         <Input
           as={tag}
           id={fieldId}
@@ -96,10 +92,10 @@ function FormField({
           hasValue={hasValue}
           onChange={onChange}
         />
-      <Label.Text>
+        <Label.Text>
           {label}
           :
-        </Label.Text> 
+        </Label.Text>
       </Label>
     </FormFieldWrapper>
   );
